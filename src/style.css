@@ -36,6 +36,8 @@ main {
 	width: 325px;
 	background-color: #fff;
 	border-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 .image-center > img {
 	width: 325px;
@@ -60,7 +62,7 @@ article > p {
 .user {
 	display: grid;
 	grid-template-columns: 20% 70% 10%;
-	padding: 1.2rem 0;
+	padding: 1rem 0;
 }
 .user-image > img {
 	width: 40px;
@@ -76,7 +78,7 @@ article > p {
 	font-size: 0.75rem;
 	color: var(--clr-dark-grayish-blue);
 }
-.share-btn {
+.share-btn, .svg {
 	border: none;
 	border-radius: 50%;
 	background: var(--clr-light-grayish-blue);
@@ -86,14 +88,12 @@ article > p {
 	top: 5px;
 	cursor: pointer;
 }
-footer {
+.social-media {
 	background-color: var(--clr-dark-grayish-blue);
 	margin-top: 1.2rem;
 	padding: 1rem 2rem;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
-}
-.social-media {
 	display: grid;
 	grid-template-columns: 30% 60% 10%;
 }
@@ -117,30 +117,58 @@ footer {
 .hide {
 	display: none;
 }
-/*@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
 	main {
 		width: 1024px;
 		background-color: aliceblue;
 	}
 	.container {
-		width: 720px;
+		width: 700px;
 		display: grid;
 		grid-template-columns: auto auto;
-	}
-	.image-center{
-		overflow: hidden;
+		position: relative;
 	}
 	.image-center > img {
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
 		width: 270px;
+		height: auto;
 		min-height: 248px;
 		margin: 0;
 		padding: 0;
-		height: auto;
 	}
 	.user {
 		padding-bottom: 0;
 	}
-	.content{
+	.content {
 		padding: 2rem;
 	}
-}*/
+	footer {
+		position: absolute;
+		right: -60px;
+		top: 70px;
+	}
+	.social-media {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		display: grid;
+		grid-template-columns: auto auto;
+		padding: 1rem;
+	}
+	#share {
+		margin-right: 1rem;
+	}
+	.svg {
+		display: none;
+	}
+	.arrow-down {
+		position: absolute;
+		right: 50%;
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid var(--clr-dark-grayish-blue);
+		transform: rotate(180deg);
+	}
+}
